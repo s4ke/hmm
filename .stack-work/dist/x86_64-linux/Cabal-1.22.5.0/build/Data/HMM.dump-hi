@@ -1,0 +1,2134 @@
+
+==================== FINAL INTERFACE ====================
+2016-11-14 11:45:22.594051 UTC
+
+interface hmm_Ev3X0jeKFBs9YlCjXtVYTN:Data.HMM [orphan module] 7103
+  interface hash: 89bcb4124c88ee92a45bfd36aac626ac
+  ABI hash: 02e38631d1a7d24a73984a7147f45622
+  export-list hash: 0e2b71c4d56a6dc3fc45ce8024563091
+  orphan hash: c1500a44395609d1bc2c5bd9f631a5d2
+  flag hash: 66d28c61587434027f02724f55697c1b
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Data.HMM.backward
+  Data.HMM.baumWelch
+  Data.HMM.forward
+  Data.HMM.hmmJoin
+  Data.HMM.loadHMM
+  Data.HMM.loadHMM'
+  Data.HMM.saveHMM
+  Data.HMM.saveHMM'
+  Data.HMM.simpleHMM
+  Data.HMM.simpleMM
+  Data.HMM.viterbi
+  Data.HMM.HMM{Data.HMM.HMM Data.HMM.events Data.HMM.initProbs Data.HMM.outMatrix Data.HMM.states Data.HMM.transMatrix}
+  Data.HMM.Prob
+module dependencies:
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      data-inttrie-0.1.2@datai_LP06f449aHwEbLFrJgDVFj
+                      data-memocombinators-0.5.1@datam_0AoBLATD68eBCbXBukPRmR
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59 ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0
+                      list-extras-0.4.1.4@liste_3FmoFmkKtAc6cBYdIvgPxf
+                      logfloat-0.13.3.3@logfl_4aPEX86SAgQ9g6Kj3zCSxy
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+import  -/  array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA:Data.Array 6e22602c1cc5e362609f0924a7c0a209
+import  -/  base-4.8.2.0:Control.Applicative a8ebf5ad4932b411ad7725da68be9801
+import  -/  base-4.8.2.0:Control.Monad 480c5067477275068c9b98be08410df9
+import  -/  base-4.8.2.0:Data.Char c8f827952d4111ae2e47c0b105217cdb
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:Data.Tuple 012ad951a59a9d85fe1de36a2f012986
+import  -/  base-4.8.2.0:Debug.Trace 6660afb6094d69397ea084364da8f950
+import  -/  base-4.8.2.0:GHC.Arr 70f35e6bfbc61995e045edb612354887
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.IO.Exception e38c1261b70caecb7af416b94c82c925
+import  -/  base-4.8.2.0:GHC.IO.Handle.FD 4b888b3713ea36bd21caa2badeaf319d
+import  -/  base-4.8.2.0:GHC.IO.Handle.Text 06d2dc7704bcfe88a2157fd04748ace5
+import  -/  base-4.8.2.0:GHC.IO.IOMode 89fcaeb96929360e7be5a7bbb14ceec9
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Read b423b4506a014855edbd329b567629f3
+import  -/  base-4.8.2.0:GHC.Real 1281efa9baf803bc7859d7efb89a38b3
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:GHC.Unicode cdf84fc3abbaf34ba6b6645291cef991
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
+import  -/  base-4.8.2.0:Text.ParserCombinators.ReadPrec 2590e0e0a57a86ac7c62727f4d868dd2
+import  -/  base-4.8.2.0:Text.Read ef0ef92fb7358ae94bab089940adfd2a
+import  -/  base-4.8.2.0:Text.Read.Lex 724ca44ddd38ddc5f47a501d62736c26
+import  -/  binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary 8384d103fc9149c36c5489e79a596d51
+import  -/  binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Class 5b0725766de2761cca5642005bc2feb5
+import  -/  binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Get.Internal f7dd83cd0696ee6b63b981f12146322a
+import  -/  bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Lazy 7f48d46f600589dfd94d36d5fcf54f5b
+import  -/  containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map 1800ccac43fd924c376b60eac12f4d04
+import  -/  containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base 642e37808d03e24efbe8e8ff1336f343
+import  -/  data-memocombinators-0.5.1@datam_0AoBLATD68eBCbXBukPRmR:Data.MemoCombinators 8a0c9a17f1c26babef898aea1089eb55
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  list-extras-0.4.1.4@liste_3FmoFmkKtAc6cBYdIvgPxf:Data.List.Extras e9eba6ae914ac832f9156310b54cfa7f
+import  -/  list-extras-0.4.1.4@liste_3FmoFmkKtAc6cBYdIvgPxf:Data.List.Extras.Argmax f953d3417d96a1be424058aa2129bdb5
+import  -/  logfloat-0.13.3.3@logfl_4aPEX86SAgQ9g6Kj3zCSxy:Data.Number.LogFloat 9debe6fead5b685edfe571cff027baa9
+7db504c2eee36c71abbbf691d3667130
+  $fBinaryHMMArray ::
+    (Data.Binary.Class.Binary stateType,
+     Data.Binary.Class.Binary eventType) =>
+    Data.Binary.Class.Binary (Data.HMM.HMMArray stateType eventType)
+  DFunId[0]
+  {- Arity: 2, Strictness: <L,U(U,C(C1(U)))><L,U(U,C(C1(U)))>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ stateType
+                      @ eventType
+                      $dBinary :: Data.Binary.Class.Binary stateType
+                      $dBinary1 :: Data.Binary.Class.Binary eventType.
+                  @ (Data.HMM.HMMArray stateType eventType)
+                  (Data.HMM.$fBinaryHMMArray_$cput
+                     @ stateType
+                     @ eventType
+                     $dBinary
+                     $dBinary1)
+                  (Data.HMM.$fBinaryHMMArray_$cget
+                     @ stateType
+                     @ eventType
+                     $dBinary
+                     $dBinary1) -}
+7db504c2eee36c71abbbf691d3667130
+  $fBinaryHMMArray1 ::
+    (Data.Binary.Class.Binary stateType,
+     Data.Binary.Class.Binary eventType) =>
+    forall r.
+    Data.ByteString.Internal.ByteString
+    -> Data.Binary.Get.Internal.Success
+         (Data.HMM.HMMArray stateType eventType) r
+    -> Data.Binary.Get.Internal.Decoder r
+  {- Arity: 4,
+     Strictness: <L,U(A,C(C1(U)))><L,U(A,C(C1(U)))><S,1*U(U,U,U,U)><L,C(C1(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ @ stateType
+                   @ eventType
+                   w :: Data.Binary.Class.Binary stateType
+                   w1 :: Data.Binary.Class.Binary eventType
+                   @ r
+                   w2 :: Data.ByteString.Internal.ByteString
+                   w3 :: Data.Binary.Get.Internal.Success
+                           (Data.HMM.HMMArray stateType eventType) r ->
+                 case w2 of ww { Data.ByteString.Internal.PS ww2 ww3 ww4 ww5 ->
+                 Data.HMM.$wa
+                   @ stateType
+                   @ eventType
+                   w
+                   w1
+                   @ r
+                   ww2
+                   ww3
+                   ww4
+                   ww5
+                   w3 }) -}
+7db504c2eee36c71abbbf691d3667130
+  $fBinaryHMMArray_$cget ::
+    (Data.Binary.Class.Binary stateType,
+     Data.Binary.Class.Binary eventType) =>
+    Data.Binary.Get.Internal.Get
+      (Data.HMM.HMMArray stateType eventType)
+  {- Arity: 4,
+     Strictness: <L,U(A,C(C1(U)))><L,U(A,C(C1(U)))><S,1*U(U,U,U,U)><L,C(C1(U))>,
+     Unfolding: InlineRule (0, True, True)
+                Data.HMM.$fBinaryHMMArray1
+                  `cast`
+                (forall stateType eventType.
+                 <Data.Binary.Class.Binary stateType>_R
+                 ->_R <Data.Binary.Class.Binary eventType>_R
+                 ->_R Sym (Data.Binary.Get.Internal.NTCo:Get[0]
+                               <Data.HMM.HMMArray stateType eventType>_R)) -}
+7db504c2eee36c71abbbf691d3667130
+  $fBinaryHMMArray_$cput ::
+    (Data.Binary.Class.Binary stateType,
+     Data.Binary.Class.Binary eventType) =>
+    Data.HMM.HMMArray stateType eventType -> Data.Binary.Put.Put
+  {- Arity: 3,
+     Strictness: <L,1*U(1*U,A)><L,1*U(1*U,A)><L,U(1*U,1*U,1*U(U,U,U,U),1*U(U,U,U,U),1*U(U,U,U,U))>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ stateType
+                   @ eventType
+                   w :: Data.Binary.Class.Binary stateType
+                   w1 :: Data.Binary.Class.Binary eventType
+                   w2 :: Data.HMM.HMMArray stateType eventType ->
+                 case Data.HMM.$w$cput
+                        @ stateType
+                        @ eventType
+                        w
+                        w1
+                        w2 of ww { (#,#) ww2 ww3 ->
+                 (Data.Binary.Put.PairS @ () ww2 ww3)
+                   `cast`
+                 (Sym (Data.Binary.Put.NTCo:PutM[0]) <()>_N) }) -}
+d45677b0d1fbb76607c6d2d96c5e54c8
+  $fBinaryHMMArray_$s$fBinaryArray ::
+    Data.Binary.Class.Binary
+      (GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat)
+                  (Data.Binary.Class.$fBinaryArray_$cput
+                     @ GHC.Types.Int
+                     @ Data.Number.LogFloat.LogFloat
+                     Data.Binary.Class.$fBinaryInt
+                     GHC.Arr.$fIxInt
+                     Data.HMM.$fBinaryLogFloat)
+                  (Data.Binary.Class.$fBinaryArray_$cget
+                     @ GHC.Types.Int
+                     @ Data.Number.LogFloat.LogFloat
+                     Data.Binary.Class.$fBinaryInt
+                     GHC.Arr.$fIxInt
+                     Data.HMM.$fBinaryLogFloat) -}
+0c90b1c2726f5d5c7528de3605c56037
+  $fBinaryLogFloat ::
+    Data.Binary.Class.Binary Data.Number.LogFloat.LogFloat
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.Number.LogFloat.LogFloat
+                  Data.HMM.$fBinaryLogFloat_$cput
+                  Data.HMM.$fBinaryLogFloat_$cget -}
+3293ec2e5bc4f0119abbf37c6cc0ace6
+  $fBinaryLogFloat1 ::
+    Data.ByteString.Internal.ByteString
+    -> Data.Binary.Get.Internal.Success
+         Data.Number.LogFloat.LogFloat r1
+    -> Data.Binary.Get.Internal.Decoder r1
+  {- Arity: 2, Strictness: <S,1*U(U,U,U,U)><L,C(C1(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ r1
+                   w :: Data.ByteString.Internal.ByteString
+                   w1 :: Data.Binary.Get.Internal.Success
+                           Data.Number.LogFloat.LogFloat r1 ->
+                 case w of ww { Data.ByteString.Internal.PS ww2 ww3 ww4 ww5 ->
+                 Data.HMM.$wa1 @ r1 ww2 ww3 ww4 ww5 w1 }) -}
+b20ccd5f6b861d8b9effe3ec85366235
+  $fBinaryLogFloat_$cget ::
+    Data.Binary.Get.Internal.Get Data.Number.LogFloat.LogFloat
+  {- Arity: 2, Strictness: <S,1*U(U,U,U,U)><L,C(C1(U))>,
+     Unfolding: InlineRule (0, True, True)
+                Data.HMM.$fBinaryLogFloat1
+                  `cast`
+                (Sym (Data.Binary.Get.Internal.NTCo:Get[0]
+                          <Data.Number.LogFloat.LogFloat>_R)) -}
+47c4884833d0793f1df400cbf7bab845
+  $fBinaryLogFloat_$cput ::
+    Data.Number.LogFloat.LogFloat -> Data.Binary.Put.Put
+  {- Arity: 1, Strictness: <S,1*U(U)>m,
+     Unfolding: InlineRule (0, True, True)
+                Data.Binary.Class.$fBinaryDouble_$cput
+                  `cast`
+                (Sym (Data.Number.LogFloat.NTCo:LogFloat[0])
+                 ->_R <Data.Binary.Put.Put>_R) -}
+7db504c2eee36c71abbbf691d3667130
+  $fReadHMMArray ::
+    (GHC.Read.Read stateType, GHC.Read.Read eventType) =>
+    GHC.Read.Read (Data.HMM.HMMArray stateType eventType)
+  DFunId[0]
+  {- Arity: 2, Strictness: <L,U(A,A,A,U)><L,U(A,A,A,U)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ stateType
+                      @ eventType
+                      $dRead :: GHC.Read.Read stateType
+                      $dRead1 :: GHC.Read.Read eventType.
+                  @ (Data.HMM.HMMArray stateType eventType)
+                  (Data.HMM.$fReadHMMArray_$creadsPrec
+                     @ stateType
+                     @ eventType
+                     $dRead
+                     $dRead1)
+                  (Data.HMM.$fReadHMMArray_$creadList
+                     @ stateType
+                     @ eventType
+                     $dRead
+                     $dRead1)
+                  (Data.HMM.$fReadHMMArray_$creadPrec
+                     @ stateType
+                     @ eventType
+                     $dRead
+                     $dRead1)
+                  (Data.HMM.$fReadHMMArray_$creadListPrec
+                     @ stateType
+                     @ eventType
+                     $dRead
+                     $dRead1) -}
+7db504c2eee36c71abbbf691d3667130
+  $fReadHMMArray1 ::
+    (GHC.Read.Read stateType, GHC.Read.Read eventType) =>
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Data.HMM.HMMArray stateType eventType]
+        -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 4, Strictness: <L,U(A,A,A,U)><L,U(A,A,A,U)><L,A><L,C(U)>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ stateType
+                   @ eventType
+                   $dRead :: GHC.Read.Read stateType
+                   $dRead1 :: GHC.Read.Read eventType
+                   eta :: Text.ParserCombinators.ReadPrec.Prec
+                   @ b
+                   eta1 :: [Data.HMM.HMMArray stateType eventType]
+                           -> Text.ParserCombinators.ReadP.P b ->
+                 GHC.Read.$wa
+                   @ (Data.HMM.HMMArray stateType eventType)
+                   (Data.HMM.$fReadHMMArray2 @ stateType @ eventType $dRead $dRead1)
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
+                             <Data.HMM.HMMArray stateType eventType>_R))
+                   @ b
+                   eta1) -}
+7db504c2eee36c71abbbf691d3667130
+  $fReadHMMArray2 ::
+    (GHC.Read.Read stateType, GHC.Read.Read eventType) =>
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP
+         (Data.HMM.HMMArray stateType eventType)
+  {- Arity: 3,
+     Strictness: <L,1*U(A,A,A,1*U)><L,1*U(A,A,A,1*U)><L,U> -}
+7db504c2eee36c71abbbf691d3667130
+  $fReadHMMArray_$creadList ::
+    (GHC.Read.Read stateType, GHC.Read.Read eventType) =>
+    Text.ParserCombinators.ReadP.ReadS
+      [Data.HMM.HMMArray stateType eventType]
+  {- Arity: 2, Strictness: <L,U(A,A,A,U)><L,U(A,A,A,U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ stateType
+                   @ eventType
+                   $dRead :: GHC.Read.Read stateType
+                   $dRead1 :: GHC.Read.Read eventType ->
+                 Text.ParserCombinators.ReadP.run
+                   @ [Data.HMM.HMMArray stateType eventType]
+                   (GHC.Read.$wa
+                      @ (Data.HMM.HMMArray stateType eventType)
+                      (Data.HMM.$fReadHMMArray2 @ stateType @ eventType $dRead $dRead1)
+                        `cast`
+                      (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
+                                <Data.HMM.HMMArray stateType eventType>_R))
+                      @ [Data.HMM.HMMArray stateType eventType]
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
+                         @ [Data.HMM.HMMArray stateType eventType]))) -}
+7db504c2eee36c71abbbf691d3667130
+  $fReadHMMArray_$creadListPrec ::
+    (GHC.Read.Read stateType, GHC.Read.Read eventType) =>
+    Text.ParserCombinators.ReadPrec.ReadPrec
+      [Data.HMM.HMMArray stateType eventType]
+  {- Arity: 4, Strictness: <L,U(A,A,A,U)><L,U(A,A,A,U)><L,A><L,C(U)>,
+     Unfolding: InlineRule (0, True, True)
+                Data.HMM.$fReadHMMArray1
+                  `cast`
+                (forall stateType eventType.
+                 <GHC.Read.Read stateType>_R
+                 ->_R <GHC.Read.Read eventType>_R
+                 ->_R Trans
+                          (<Text.ParserCombinators.ReadPrec.Prec>_R
+                           ->_R Sym (Text.ParserCombinators.ReadP.NTCo:ReadP[0]
+                                         <[Data.HMM.HMMArray stateType eventType]>_R))
+                          (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
+                                    <[Data.HMM.HMMArray stateType eventType]>_R))) -}
+7db504c2eee36c71abbbf691d3667130
+  $fReadHMMArray_$creadPrec ::
+    (GHC.Read.Read stateType, GHC.Read.Read eventType) =>
+    Text.ParserCombinators.ReadPrec.ReadPrec
+      (Data.HMM.HMMArray stateType eventType)
+  {- Arity: 3, Strictness: <L,1*U(A,A,A,1*U)><L,1*U(A,A,A,1*U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.HMM.$fReadHMMArray2
+                  `cast`
+                (forall stateType eventType.
+                 <GHC.Read.Read stateType>_R
+                 ->_R <GHC.Read.Read eventType>_R
+                 ->_R Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
+                               <Data.HMM.HMMArray stateType eventType>_R)) -}
+7db504c2eee36c71abbbf691d3667130
+  $fReadHMMArray_$creadsPrec ::
+    (GHC.Read.Read stateType, GHC.Read.Read eventType) =>
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS
+         (Data.HMM.HMMArray stateType eventType)
+  {- Arity: 3, Strictness: <L,1*U(A,A,A,1*U)><L,1*U(A,A,A,1*U)><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ stateType
+                   @ eventType
+                   $dRead :: GHC.Read.Read stateType
+                   $dRead1 :: GHC.Read.Read eventType
+                   eta :: GHC.Types.Int ->
+                 Text.ParserCombinators.ReadP.run
+                   @ (Data.HMM.HMMArray stateType eventType)
+                   ((Data.HMM.$fReadHMMArray2
+                       @ stateType
+                       @ eventType
+                       $dRead
+                       $dRead1
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.NTCo:ReadP[0]
+                         <Data.HMM.HMMArray stateType eventType>_R)
+                      @ (Data.HMM.HMMArray stateType eventType)
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
+                         @ (Data.HMM.HMMArray stateType eventType)))) -}
+5f2b622234f713144919446dca6a2cca
+  $fReadLogFloat :: GHC.Read.Read Data.Number.LogFloat.LogFloat
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.Number.LogFloat.LogFloat
+                  Data.HMM.$fReadLogFloat_$creadsPrec
+                  Data.HMM.$fReadLogFloat_$creadList
+                  Data.HMM.$fReadLogFloat_$creadPrec
+                  Data.HMM.$fReadLogFloat_$creadListPrec -}
+6b0830b888b1ca5670a6749aaa079a0b
+  $fReadLogFloat1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Data.Number.LogFloat.LogFloat]
+        -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,A><L,C(U)>m2,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: Text.ParserCombinators.ReadPrec.Prec
+                   @ b
+                   eta1 :: [Data.Number.LogFloat.LogFloat]
+                           -> Text.ParserCombinators.ReadP.P b ->
+                 case Text.ParserCombinators.ReadP.$wa5
+                        @ [Data.Number.LogFloat.LogFloat]
+                        Data.HMM.$fReadLogFloat_$creadList
+                        @ b
+                        eta1 of ww { (##) ww2 ->
+                 Text.ParserCombinators.ReadP.Look @ b ww2 }) -}
+30463db9b9ad75547ac49cc8c27b4a27
+  $fReadLogFloat2 ::
+    Text.ParserCombinators.ReadP.P [Data.Number.LogFloat.LogFloat]
+  {- Unfolding: (GHC.Read.$wa
+                   @ Data.Number.LogFloat.LogFloat
+                   Data.HMM.$fReadLogFloat3
+                     `cast`
+                   (Trans
+                        (<Text.ParserCombinators.ReadPrec.Prec>_R
+                         ->_R Sym (Text.ParserCombinators.ReadP.NTCo:ReadP[0]
+                                       <Data.Number.LogFloat.LogFloat>_R))
+                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
+                                  <Data.Number.LogFloat.LogFloat>_R)))
+                   @ [Data.Number.LogFloat.LogFloat]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
+                      @ [Data.Number.LogFloat.LogFloat])) -}
+55e42d92c6e1e95b783b3773963bdf4a
+  $fReadLogFloat3 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Data.Number.LogFloat.LogFloat -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,U><L,C(U)>m2,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: Text.ParserCombinators.ReadPrec.Prec
+                   @ b
+                   eta1 :: Data.Number.LogFloat.LogFloat
+                           -> Text.ParserCombinators.ReadP.P b ->
+                 case Text.ParserCombinators.ReadP.$wa5
+                        @ Data.Number.LogFloat.LogFloat
+                        (Data.HMM.$fReadLogFloat_$creadsPrec eta)
+                        @ b
+                        eta1 of ww { (##) ww2 ->
+                 Text.ParserCombinators.ReadP.Look @ b ww2 }) -}
+71b62f9f5d8585e9a4b774a2c7284b15
+  $fReadLogFloat_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Data.Number.LogFloat.LogFloat]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Data.Number.LogFloat.LogFloat]
+                   Data.HMM.$fReadLogFloat2) -}
+3ad002d4b2c27af2e60006df20ff2b4d
+  $fReadLogFloat_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec
+      [Data.Number.LogFloat.LogFloat]
+  {- Arity: 2, Strictness: <L,A><L,C(U)>m2,
+     Unfolding: InlineRule (0, True, True)
+                Data.HMM.$fReadLogFloat1
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.NTCo:ReadP[0]
+                                    <[Data.Number.LogFloat.LogFloat]>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
+                               <[Data.Number.LogFloat.LogFloat]>_R))) -}
+22d4bf19da5daee8a5fa89c25cc4bfd2
+  $fReadLogFloat_$creadPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec
+      Data.Number.LogFloat.LogFloat
+  {- Arity: 2, Strictness: <L,U><L,C(U)>m2,
+     Unfolding: InlineRule (0, True, True)
+                Data.HMM.$fReadLogFloat3
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.NTCo:ReadP[0]
+                                    <Data.Number.LogFloat.LogFloat>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
+                               <Data.Number.LogFloat.LogFloat>_R))) -}
+49381d4d330286664522c8e7c5e78290
+  $fReadLogFloat_$creadsPrec ::
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS Data.Number.LogFloat.LogFloat
+  {- Arity: 2, Strictness: <L,U><L,1*U>,
+     Unfolding: (\ a13 :: GHC.Types.Int str :: GHC.Base.String ->
+                 Data.HMM.$fReadLogFloat_go
+                   (Text.ParserCombinators.ReadP.run
+                      @ GHC.Types.Double
+                      ((GHC.Read.$fReadDouble9 GHC.Read.$fReadDouble_$sconvertFrac a13)
+                         `cast`
+                       (Text.ParserCombinators.ReadP.NTCo:ReadP[0] <GHC.Types.Double>_R)
+                         @ GHC.Types.Double
+                         (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
+                            @ GHC.Types.Double))
+                      (Data.HMM.$wunsafeDrop @ GHC.Types.Char 8 str))) -}
+674533e36a82ad6ede8f5c075bd188b5
+  $fReadLogFloat_go ::
+    [(GHC.Types.Double, GHC.Base.String)]
+    -> [(Data.Number.LogFloat.LogFloat, GHC.Base.String)]
+  {- Arity: 1, Strictness: <S,1*U> -}
+6a716290f83a41def82fc38f1e7bb36a
+  $fShowHMM ::
+    (GHC.Show.Show stateType, GHC.Show.Show eventType) =>
+    GHC.Show.Show (Data.HMM.HMM stateType eventType)
+  DFunId[0]
+  {- Arity: 2,
+     Strictness: <L,U(C(C1(U)),A,C(C1(U)))><L,U(C(C1(U)),A,C(C1(U)))>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ stateType
+                      @ eventType
+                      $dShow :: GHC.Show.Show stateType
+                      $dShow1 :: GHC.Show.Show eventType.
+                  @ (Data.HMM.HMM stateType eventType)
+                  (Data.HMM.$fShowHMM_$cshowsPrec
+                     @ stateType
+                     @ eventType
+                     $dShow
+                     $dShow1)
+                  (Data.HMM.$fShowHMM_$cshow @ stateType @ eventType $dShow $dShow1)
+                  (Data.HMM.$fShowHMM_$cshowList
+                     @ stateType
+                     @ eventType
+                     $dShow
+                     $dShow1) -}
+7db504c2eee36c71abbbf691d3667130
+  $fShowHMMArray ::
+    (GHC.Show.Show stateType, GHC.Show.Show eventType) =>
+    GHC.Show.Show (Data.HMM.HMMArray stateType eventType)
+  DFunId[0]
+  {- Arity: 2, Strictness: <L,U(A,A,C(U))><L,U(A,A,C(U))>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ stateType
+                      @ eventType
+                      $dShow :: GHC.Show.Show stateType
+                      $dShow1 :: GHC.Show.Show eventType.
+                  @ (Data.HMM.HMMArray stateType eventType)
+                  (Data.HMM.$fShowHMMArray_$cshowsPrec
+                     @ stateType
+                     @ eventType
+                     $dShow
+                     $dShow1)
+                  (Data.HMM.$fShowHMMArray_$cshow
+                     @ stateType
+                     @ eventType
+                     $dShow
+                     $dShow1)
+                  (Data.HMM.$fShowHMMArray_$cshowList
+                     @ stateType
+                     @ eventType
+                     $dShow
+                     $dShow1) -}
+6a5f05a9649e0d3e9e57a7035dd9c188
+  $fShowHMMArray1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0) -}
+ee02be074db3b516ec240c27a6d2c097
+  $fShowHMMArray10 ::
+    [GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat]
+    -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ ls :: [GHC.Arr.Array
+                            GHC.Types.Int Data.Number.LogFloat.LogFloat]
+                   s :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat)
+                   Data.HMM.$fShowHMMArray11
+                   ls
+                   s) -}
+4de6247b4e7ef74816e4aaac5a088744
+  $fShowHMMArray11 ::
+    GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat
+    -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ w4 :: GHC.Arr.Array
+                           GHC.Types.Int Data.Number.LogFloat.LogFloat ->
+                 GHC.Arr.$w$cshowsPrec
+                   @ GHC.Types.Int
+                   @ Data.Number.LogFloat.LogFloat
+                   GHC.Arr.$fIxInt
+                   GHC.Show.$fShowInt
+                   Data.Number.LogFloat.$fShowLogFloat
+                   0
+                   w4) -}
+b84b445be85f674f8224c9024c8144f0
+  $fShowHMMArray12 ::
+    GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat
+    -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,U(U,U,U,U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: GHC.Arr.Array
+                          GHC.Types.Int Data.Number.LogFloat.LogFloat ->
+                 GHC.Arr.$w$cshowsPrec
+                   @ GHC.Types.Int
+                   @ Data.Number.LogFloat.LogFloat
+                   GHC.Arr.$fIxInt
+                   GHC.Show.$fShowInt
+                   Data.Number.LogFloat.$fShowLogFloat
+                   0
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+a427e60a55a6998b0c3b3507f29ea363
+  $fShowHMMArray2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+1534a4a43c39139cf7fc4c1d274b5aae
+  $fShowHMMArray3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "outMatrixA = "#) -}
+76526e9db3e4aa4d5ce69423a113e42a
+  $fShowHMMArray4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "transMatrixA = "#) -}
+acafc13fa8f38273c6b639314b1bba23
+  $fShowHMMArray5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "initProbsA = "#) -}
+68f0be08bd2f468938b6df5f72ada55f
+  $fShowHMMArray6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "eventsA = "#) -}
+7ac8ac4d016aa9a898c6de64421d90a3
+  $fShowHMMArray7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+11c7bde2a5672ee67e651c1c07e5c306
+  $fShowHMMArray8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "statesA = "#) -}
+02e45eb570045c79027e0ed6ef97ca54
+  $fShowHMMArray9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "HMMArray {"#) -}
+7db504c2eee36c71abbbf691d3667130
+  $fShowHMMArray_$cshow ::
+    (GHC.Show.Show stateType, GHC.Show.Show eventType) =>
+    Data.HMM.HMMArray stateType eventType -> GHC.Base.String
+  {- Arity: 3,
+     Strictness: <L,1*U(A,A,1*C1(U))><L,1*U(A,A,1*C1(U))><S,1*U(U,U,U(U,U,U,U),U(U,U,U,U),U(U,U,U,U))>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ stateType
+                   @ eventType
+                   $dShow :: GHC.Show.Show stateType
+                   $dShow1 :: GHC.Show.Show eventType
+                   x :: Data.HMM.HMMArray stateType eventType ->
+                 Data.HMM.$fShowHMMArray_$cshowsPrec
+                   @ stateType
+                   @ eventType
+                   $dShow
+                   $dShow1
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+7db504c2eee36c71abbbf691d3667130
+  $fShowHMMArray_$cshowList ::
+    (GHC.Show.Show stateType, GHC.Show.Show eventType) =>
+    [Data.HMM.HMMArray stateType eventType] -> GHC.Show.ShowS
+  {- Arity: 4,
+     Strictness: <L,U(A,A,C(U))><L,U(A,A,C(U))><S,1*U><L,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ stateType
+                   @ eventType
+                   $dShow :: GHC.Show.Show stateType
+                   $dShow1 :: GHC.Show.Show eventType
+                   eta :: [Data.HMM.HMMArray stateType eventType]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (Data.HMM.HMMArray stateType eventType)
+                   (Data.HMM.$fShowHMMArray_$cshowsPrec
+                      @ stateType
+                      @ eventType
+                      $dShow
+                      $dShow1
+                      Data.HMM.$fShowHMMArray1)
+                   eta
+                   eta1) -}
+7db504c2eee36c71abbbf691d3667130
+  $fShowHMMArray_$cshowsPrec ::
+    (GHC.Show.Show stateType, GHC.Show.Show eventType) =>
+    GHC.Types.Int
+    -> Data.HMM.HMMArray stateType eventType -> GHC.Show.ShowS
+  {- Arity: 4,
+     Strictness: <L,1*U(A,A,1*C1(U))><L,1*U(A,A,1*C1(U))><S,1*U(U)><S,1*U(U,U,U(U,U,U,U),U(U,U,U,U),U(U,U,U,U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ @ stateType
+                   @ eventType
+                   w :: GHC.Show.Show stateType
+                   w1 :: GHC.Show.Show eventType
+                   w2 :: GHC.Types.Int
+                   w3 :: Data.HMM.HMMArray stateType eventType ->
+                 case w2 of ww { GHC.Types.I# ww2 ->
+                 case w3 of ww3 { Data.HMM.HMMArray ww4 ww5 ww6 ww7 ww8 ->
+                 Data.HMM.$w$cshowsPrec
+                   @ stateType
+                   @ eventType
+                   w
+                   w1
+                   ww2
+                   ww4
+                   ww5
+                   ww6
+                   ww7
+                   ww8 } }) -}
+039ab30c2db0fdbe12936e05a04c43cb
+  $fShowHMMArray_$s$fShowArray ::
+    GHC.Show.Show
+      (GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat)
+                  (GHC.Arr.$fShowArray_$cshowsPrec
+                     @ GHC.Types.Int
+                     @ Data.Number.LogFloat.LogFloat
+                     GHC.Arr.$fIxInt
+                     GHC.Show.$fShowInt
+                     Data.Number.LogFloat.$fShowLogFloat)
+                  Data.HMM.$fShowHMMArray12
+                  Data.HMM.$fShowHMMArray10 -}
+6a716290f83a41def82fc38f1e7bb36a
+  $fShowHMM_$cshow ::
+    (GHC.Show.Show stateType, GHC.Show.Show eventType) =>
+    Data.HMM.HMM stateType eventType -> GHC.Base.String
+  {- Arity: 3,
+     Strictness: <L,U(C(C1(U)),A,1*C1(C1(U)))><L,U(C(C1(U)),A,1*C1(C1(U)))><L,U(U,U,C(U),C(C1(U)),C(C1(U)))> -}
+6a716290f83a41def82fc38f1e7bb36a
+  $fShowHMM_$cshowList ::
+    (GHC.Show.Show stateType, GHC.Show.Show eventType) =>
+    [Data.HMM.HMM stateType eventType] -> GHC.Show.ShowS
+  {- Arity: 4,
+     Strictness: <L,U(C(C1(U)),A,C(C1(U)))><L,U(C(C1(U)),A,C(C1(U)))><S,1*U><L,U>,
+     Unfolding: (\ @ stateType
+                   @ eventType
+                   $dShow :: GHC.Show.Show stateType
+                   $dShow1 :: GHC.Show.Show eventType
+                   ls :: [Data.HMM.HMM stateType eventType]
+                   s :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (Data.HMM.HMM stateType eventType)
+                   (\ x :: Data.HMM.HMM stateType eventType
+                      s1 :: GHC.Base.String[OneShot] ->
+                    GHC.Base.++
+                      @ GHC.Types.Char
+                      (Data.HMM.$fShowHMM_$cshow
+                         @ stateType
+                         @ eventType
+                         $dShow
+                         $dShow1
+                         x)
+                      s1)
+                   ls
+                   s) -}
+6a716290f83a41def82fc38f1e7bb36a
+  $fShowHMM_$cshowsPrec ::
+    (GHC.Show.Show stateType, GHC.Show.Show eventType) =>
+    GHC.Types.Int -> Data.HMM.HMM stateType eventType -> GHC.Show.ShowS
+  {- Arity: 5,
+     Strictness: <L,U(C(C1(U)),A,C(C1(U)))><L,U(C(C1(U)),A,C(C1(U)))><L,A><L,U(U,U,C(U),C(C1(U)),C(C1(U)))><L,1*U>,
+     Unfolding: InlineRule (5, True, False)
+                (\ @ stateType
+                   @ eventType
+                   $dShow :: GHC.Show.Show stateType
+                   $dShow1 :: GHC.Show.Show eventType
+                   ds :: GHC.Types.Int
+                   x :: Data.HMM.HMM stateType eventType
+                   s :: GHC.Base.String ->
+                 GHC.Base.augment
+                   @ GHC.Types.Char
+                   (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                    GHC.Base.foldr
+                      @ GHC.Types.Char
+                      @ b
+                      c
+                      n
+                      (Data.HMM.$fShowHMM_$cshow
+                         @ stateType
+                         @ eventType
+                         $dShow
+                         $dShow1
+                         x))
+                   s) -}
+55436fc4d5c6552efdba3520e9aa725c
+  $s$fReadArray ::
+    GHC.Read.Read
+      (GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat)
+                  Data.HMM.$s$fReadArray_$s$fReadArray_$creadsPrec
+                  Data.HMM.$s$fReadArray_$s$fReadArray_$creadList
+                  (GHC.Read.$fReadArray_$creadPrec
+                     @ GHC.Types.Int
+                     @ Data.Number.LogFloat.LogFloat
+                     GHC.Arr.$fIxInt
+                     GHC.Read.$fReadInt
+                     Data.HMM.$fReadLogFloat)
+                  (GHC.Read.$fReadArray_$creadListPrec
+                     @ GHC.Types.Int
+                     @ Data.Number.LogFloat.LogFloat
+                     GHC.Arr.$fIxInt
+                     GHC.Read.$fReadInt
+                     Data.HMM.$fReadLogFloat) -}
+11c03b0293f26b7324aad587723fb536
+  $s$fReadArray_$s$fReadArray_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS
+      [GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat]
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, False)
+                (Text.ParserCombinators.ReadP.run
+                   @ [GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat]
+                   (GHC.Read.list1
+                      @ (GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat)
+                      (GHC.Read.$fReadArray2
+                         @ GHC.Types.Int
+                         @ Data.Number.LogFloat.LogFloat
+                         GHC.Arr.$fIxInt
+                         GHC.Read.$fReadInt
+                         Data.HMM.$fReadLogFloat)
+                        `cast`
+                      (Trans
+                           (<Text.ParserCombinators.ReadPrec.Prec>_R
+                            ->_R Sym (Text.ParserCombinators.ReadP.NTCo:ReadP[0]
+                                          <GHC.Arr.Array
+                                             GHC.Types.Int Data.Number.LogFloat.LogFloat>_R))
+                           (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
+                                     <GHC.Arr.Array
+                                        GHC.Types.Int Data.Number.LogFloat.LogFloat>_R)))
+                      GHC.Read.$fRead(,)7
+                      @ [GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat]
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
+                         @ [GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat]))) -}
+2040d7df9da935e3ad4d03d56d43a512
+  $s$fReadArray_$s$fReadArray_$creadsPrec ::
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS
+         (GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat)
+  {- Arity: 1, Strictness: <L,1*U(U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ eta :: GHC.Types.Int ->
+                 Text.ParserCombinators.ReadP.run
+                   @ (GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat)
+                   (GHC.Read.$fReadArray2
+                      @ GHC.Types.Int
+                      @ Data.Number.LogFloat.LogFloat
+                      GHC.Arr.$fIxInt
+                      GHC.Read.$fReadInt
+                      Data.HMM.$fReadLogFloat
+                      eta
+                      @ (GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat)
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
+                         @ (GHC.Arr.Array GHC.Types.Int Data.Number.LogFloat.LogFloat)))) -}
+89ad909f4bb131c9d12648074591fe96
+  $sfromList ::
+    [(GHC.Integer.Type.Integer, a)]
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ @ a13 ds :: [(GHC.Integer.Type.Integer, a13)] ->
+                 case ds of wild {
+                   [] -> Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a13
+                   : ds1 ds2
+                   -> case ds1 of wild1 { (,) kx x ->
+                      case ds2 of wild2 {
+                        []
+                        -> case kx of dt { DEFAULT ->
+                           Data.Map.Base.Bin
+                             @ GHC.Integer.Type.Integer
+                             @ a13
+                             1
+                             dt
+                             x
+                             (Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a13)
+                             (Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a13) }
+                        : ipv ipv1
+                        -> case ipv of wild3 { (,) ky ds3 ->
+                           case GHC.Integer.Type.geInteger# kx ky of wild4 { DEFAULT ->
+                           case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild4 of wild5 {
+                             GHC.Types.False
+                             -> case kx of dt { DEFAULT ->
+                                Data.HMM.$wpoly_go10
+                                  @ a13
+                                  1
+                                  (Data.Map.Base.Bin
+                                     @ GHC.Integer.Type.Integer
+                                     @ a13
+                                     1
+                                     dt
+                                     x
+                                     (Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a13)
+                                     (Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a13))
+                                  wild2 }
+                             GHC.Types.True
+                             -> case kx of dt { DEFAULT ->
+                                Data.HMM.$sfromList1
+                                  @ a13
+                                  (Data.Map.Base.Bin
+                                     @ GHC.Integer.Type.Integer
+                                     @ a13
+                                     1
+                                     dt
+                                     x
+                                     (Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a13)
+                                     (Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a13))
+                                  wild2 } } } } } } }) -}
+90d95a1ec0d9484884a344c175ac3dc5
+  $sfromList1 ::
+    Data.Map.Base.Map GHC.Integer.Type.Integer a1
+    -> [(GHC.Integer.Type.Integer, a1)]
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a1
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+9466a642c00dab4b39d1655f71c6a37b
+  $sinsert_$sgo10 ::
+    GHC.Integer.Type.Integer
+    -> a1
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a1
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a1
+  {- Arity: 3, Strictness: <S,1*U><L,U><S,1*U> -}
+ec1a4515f9dfc40b84736bfb095188a9
+  $slookup1 ::
+    GHC.Integer.Type.Integer
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a -> GHC.Base.Maybe a
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+da687779febbae358c2816e49c55ade6
+  $sreplicateM1 :: [[a3]] -> [[a3]]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+343ecde08b63ee566df8356221ed4dc9
+  $sreplicateM2 :: [[a3]]
+  {- Unfolding: (\ @ a13 ->
+                 Data.HMM.$sreplicateM1 @ a13 (GHC.Types.[] @ [a13])) -}
+7db504c2eee36c71abbbf691d3667130
+  $w$cput ::
+    (Data.Binary.Class.Binary stateType,
+     Data.Binary.Class.Binary eventType) =>
+    Data.HMM.HMMArray stateType eventType
+    -> (# (), Data.Binary.Builder.Base.Builder #)
+  {- Arity: 3,
+     Strictness: <L,1*U(1*U,A)><L,1*U(1*U,A)><L,U(1*U,1*U,1*U(U,U,U,U),1*U(U,U,U,U),1*U(U,U,U,U))>,
+     Inline: [0],
+     Unfolding: (\ @ stateType
+                   @ eventType
+                   w :: Data.Binary.Class.Binary stateType
+                   w1 :: Data.Binary.Class.Binary eventType
+                   w2 :: Data.HMM.HMMArray stateType eventType ->
+                 let {
+                   a13 :: Data.Binary.Put.Put
+                   = case Data.Binary.Class.$w$cput8
+                            @ GHC.Types.Int
+                            @ (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)
+                            Data.Binary.Class.$fBinaryInt
+                            GHC.Arr.$fIxInt
+                            Data.HMM.$fBinaryHMMArray_$s$fBinaryArray
+                            (case w2 of wild { Data.HMM.HMMArray ds ds1 ds2 ds3 ds4 ->
+                             ds4 }) of ww { (#,#) ww2 ww3 ->
+                     (Data.Binary.Put.PairS @ () ww2 ww3)
+                       `cast`
+                     (Sym (Data.Binary.Put.NTCo:PutM[0]) <()>_N) }
+                 } in
+                 (# case a13
+                           `cast`
+                         (Data.Binary.Put.NTCo:PutM[0] <()>_N) of wild { Data.Binary.Put.PairS b1 w' ->
+                    b1 },
+                    let {
+                      f :: (Data.Binary.Builder.Base.Buffer
+                            -> GHC.Types.IO Data.ByteString.Lazy.Internal.ByteString)
+                           -> Data.Binary.Builder.Base.Buffer
+                           -> GHC.Types.IO Data.ByteString.Lazy.Internal.ByteString
+                      = case Data.Binary.Class.$w$cput26
+                               @ stateType
+                               w
+                               (case w2 of wild { Data.HMM.HMMArray ds ds1 ds2 ds3 ds4 ->
+                                ds }) of ww { (#,#) ww2 ww3 ->
+                        ww3 `cast` (Data.Binary.Builder.Base.NTCo:Builder[0]) }
+                    } in
+                    let {
+                      f1 :: (Data.Binary.Builder.Base.Buffer
+                             -> GHC.Types.IO Data.ByteString.Lazy.Internal.ByteString)
+                            -> Data.Binary.Builder.Base.Buffer
+                            -> GHC.Types.IO Data.ByteString.Lazy.Internal.ByteString
+                      = case Data.Binary.Class.$w$cput26
+                               @ eventType
+                               w1
+                               (case w2 of wild { Data.HMM.HMMArray ds ds1 ds2 ds3 ds4 ->
+                                ds1 }) of ww { (#,#) ww2 ww3 ->
+                        ww3 `cast` (Data.Binary.Builder.Base.NTCo:Builder[0]) }
+                    } in
+                    let {
+                      f2 :: (Data.Binary.Builder.Base.Buffer
+                             -> GHC.Types.IO Data.ByteString.Lazy.Internal.ByteString)
+                            -> Data.Binary.Builder.Base.Buffer
+                            -> GHC.Types.IO Data.ByteString.Lazy.Internal.ByteString
+                      = case Data.Binary.Class.$w$cput8
+                               @ GHC.Types.Int
+                               @ Data.Number.LogFloat.LogFloat
+                               Data.Binary.Class.$fBinaryInt
+                               GHC.Arr.$fIxInt
+                               Data.HMM.$fBinaryLogFloat
+                               (case w2 of wild { Data.HMM.HMMArray ds ds1 ds2 ds3 ds4 ->
+                                ds2 }) of ww { (#,#) ww2 ww3 ->
+                        ww3 `cast` (Data.Binary.Builder.Base.NTCo:Builder[0]) }
+                    } in
+                    let {
+                      f3 :: (Data.Binary.Builder.Base.Buffer
+                             -> GHC.Types.IO Data.ByteString.Lazy.Internal.ByteString)
+                            -> Data.Binary.Builder.Base.Buffer
+                            -> GHC.Types.IO Data.ByteString.Lazy.Internal.ByteString
+                      = case Data.Binary.Class.$w$cput8
+                               @ GHC.Types.Int
+                               @ (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)
+                               Data.Binary.Class.$fBinaryInt
+                               GHC.Arr.$fIxInt
+                               Data.HMM.$fBinaryHMMArray_$s$fBinaryArray
+                               (case w2 of wild { Data.HMM.HMMArray ds ds1 ds2 ds3 ds4 ->
+                                ds3 }) of ww { (#,#) ww2 ww3 ->
+                        ww3 `cast` (Data.Binary.Builder.Base.NTCo:Builder[0]) }
+                    } in
+                    (\ x :: Data.Binary.Builder.Base.Buffer
+                            -> GHC.Types.IO Data.ByteString.Lazy.Internal.ByteString ->
+                     f (f1
+                          (f2
+                             (f3
+                                (case a13
+                                        `cast`
+                                      (Data.Binary.Put.NTCo:PutM[0] <()>_N) of wild { Data.Binary.Put.PairS b1 w' ->
+                                 w' `cast` (Data.Binary.Builder.Base.NTCo:Builder[0]) x })))))
+                      `cast`
+                    (Sym (Data.Binary.Builder.Base.NTCo:Builder[0])) #)) -}
+2adc6b75bfda4d763b84864b79115557
+  $w$cshowsPrec ::
+    (GHC.Show.Show stateType, GHC.Show.Show eventType) =>
+    GHC.Prim.Int#
+    -> [stateType]
+    -> [eventType]
+    -> GHC.Arr.Array GHC.Types.Int Data.HMM.Prob
+    -> GHC.Arr.Array
+         GHC.Types.Int (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)
+    -> GHC.Arr.Array
+         GHC.Types.Int (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)
+    -> GHC.Show.ShowS
+  {- Arity: 8,
+     Strictness: <L,1*U(A,A,1*C1(U))><L,1*U(A,A,1*C1(U))><L,U><L,U><L,U><L,U(U,U,U,U)><L,U(U,U,U,U)><L,U(U,U,U,U)>,
+     Inline: [0],
+     Unfolding: (\ @ stateType
+                   @ eventType
+                   w :: GHC.Show.Show stateType
+                   w1 :: GHC.Show.Show eventType
+                   ww :: GHC.Prim.Int#
+                   ww2 :: [stateType]
+                   ww3 :: [eventType]
+                   ww4 :: GHC.Arr.Array GHC.Types.Int Data.HMM.Prob
+                   ww5 :: GHC.Arr.Array
+                            GHC.Types.Int (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)
+                   ww6 :: GHC.Arr.Array
+                            GHC.Types.Int (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob) ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.showList @ stateType w ww2
+                 } in
+                 let {
+                   f1 :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.showList @ eventType w1 ww3
+                 } in
+                 let {
+                   f2 :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Arr.$w$cshowsPrec
+                       @ GHC.Types.Int
+                       @ Data.Number.LogFloat.LogFloat
+                       GHC.Arr.$fIxInt
+                       GHC.Show.$fShowInt
+                       Data.Number.LogFloat.$fShowLogFloat
+                       0
+                       ww4
+                 } in
+                 let {
+                   f3 :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Arr.$w$cshowsPrec
+                       @ GHC.Types.Int
+                       @ (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)
+                       GHC.Arr.$fIxInt
+                       GHC.Show.$fShowInt
+                       Data.HMM.$fShowHMMArray_$s$fShowArray
+                       0
+                       ww5
+                 } in
+                 let {
+                   f4 :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Arr.$w$cshowsPrec
+                       @ GHC.Types.Int
+                       @ (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)
+                       GHC.Arr.$fIxInt
+                       GHC.Show.$fShowInt
+                       Data.HMM.$fShowHMMArray_$s$fShowArray
+                       0
+                       ww6
+                 } in
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Data.HMM.$fShowHMMArray9
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Data.HMM.$fShowHMMArray8
+                          (f (GHC.Base.++
+                                @ GHC.Types.Char
+                                Data.HMM.$fShowHMMArray7
+                                (GHC.Base.++
+                                   @ GHC.Types.Char
+                                   Data.HMM.$fShowHMMArray6
+                                   (f1
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Data.HMM.$fShowHMMArray7
+                                         (GHC.Base.++
+                                            @ GHC.Types.Char
+                                            Data.HMM.$fShowHMMArray5
+                                            (f2
+                                               (GHC.Base.++
+                                                  @ GHC.Types.Char
+                                                  Data.HMM.$fShowHMMArray7
+                                                  (GHC.Base.++
+                                                     @ GHC.Types.Char
+                                                     Data.HMM.$fShowHMMArray4
+                                                     (f3
+                                                        (GHC.Base.++
+                                                           @ GHC.Types.Char
+                                                           Data.HMM.$fShowHMMArray7
+                                                           (GHC.Base.++
+                                                              @ GHC.Types.Char
+                                                              Data.HMM.$fShowHMMArray3
+                                                              (f4
+                                                                 (GHC.Base.++
+                                                                    @ GHC.Types.Char
+                                                                    Data.HMM.$fShowHMMArray2
+                                                                    x)))))))))))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p
+                   GHC.Types.True
+                   -> \ x :: GHC.Base.String ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 x)) }) -}
+ee3bf57bf684b0b16e82f221ffb5ec83
+  $w$sreplicateM :: GHC.Prim.Int# -> [a3] -> [[a3]]
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: [0],
+     Unfolding: (\ @ a13 ww :: GHC.Prim.Int# w :: [a13] ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.<# 0 ww) of wild {
+                   GHC.Types.False -> Data.HMM.$sreplicateM2 @ a13
+                   GHC.Types.True
+                   -> let {
+                        lvl62 :: [[a13]] = GHC.Types.: @ [a13] w (GHC.Types.[] @ [a13])
+                      } in
+                      letrec {
+                        $wxs :: GHC.Prim.Int# -> [[a13]]
+                          {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+                        = \ ww2 :: GHC.Prim.Int# ->
+                          case ww2 of ds1 {
+                            DEFAULT -> GHC.Types.: @ [a13] w ($wxs (GHC.Prim.-# ds1 1))
+                            1 -> lvl62 }
+                      } in
+                      Data.HMM.$sreplicateM1 @ a13 ($wxs ww) }) -}
+7db504c2eee36c71abbbf691d3667130
+  $wa ::
+    (Data.Binary.Class.Binary stateType,
+     Data.Binary.Class.Binary eventType) =>
+    forall r.
+    GHC.Prim.Addr#
+    -> GHC.ForeignPtr.ForeignPtrContents
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Binary.Get.Internal.Success
+         (Data.HMM.HMMArray stateType eventType) r
+    -> Data.Binary.Get.Internal.Decoder r
+  {- Arity: 7,
+     Strictness: <L,U(A,C(C1(U)))><L,U(A,C(C1(U)))><L,U><L,U><L,U><L,U><L,C(C1(U))>,
+     Inline: [0],
+     Unfolding: (\ @ stateType
+                   @ eventType
+                   w :: Data.Binary.Class.Binary stateType
+                   w1 :: Data.Binary.Class.Binary eventType
+                   @ r
+                   ww :: GHC.Prim.Addr#
+                   ww2 :: GHC.ForeignPtr.ForeignPtrContents
+                   ww3 :: GHC.Prim.Int#
+                   ww4 :: GHC.Prim.Int#
+                   w2 :: Data.Binary.Get.Internal.Success
+                           (Data.HMM.HMMArray stateType eventType) r ->
+                 Data.Binary.Class.$wa16
+                   @ stateType
+                   w
+                   @ r
+                   ww
+                   ww2
+                   ww3
+                   ww4
+                   (\ i'1 :: Data.ByteString.Internal.ByteString
+                      a15 :: [stateType][OneShot] ->
+                    case i'1 of ww5 { Data.ByteString.Internal.PS ww6 ww7 ww8 ww9 ->
+                    Data.Binary.Class.$wa16
+                      @ eventType
+                      w1
+                      @ r
+                      ww6
+                      ww7
+                      ww8
+                      ww9
+                      (\ i'2 :: Data.ByteString.Internal.ByteString
+                         a13 :: [eventType][OneShot] ->
+                       Data.Binary.Class.$fBinaryArray1
+                         @ GHC.Types.Int
+                         @ Data.Number.LogFloat.LogFloat
+                         Data.Binary.Class.$fBinaryInt
+                         GHC.Arr.$fIxInt
+                         Data.HMM.$fBinaryLogFloat
+                         @ r
+                         i'2
+                         (\ i'3 :: Data.ByteString.Internal.ByteString
+                            a14 :: GHC.Arr.Array GHC.Types.Int Data.HMM.Prob[OneShot] ->
+                          Data.Binary.Class.$fBinaryArray1
+                            @ GHC.Types.Int
+                            @ (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)
+                            Data.Binary.Class.$fBinaryInt
+                            GHC.Arr.$fIxInt
+                            Data.HMM.$fBinaryHMMArray_$s$fBinaryArray
+                            @ r
+                            i'3
+                            (\ i'4 :: Data.ByteString.Internal.ByteString
+                               a16 :: GHC.Arr.Array
+                                        GHC.Types.Int
+                                        (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)[OneShot] ->
+                             Data.Binary.Class.$fBinaryArray1
+                               @ GHC.Types.Int
+                               @ (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)
+                               Data.Binary.Class.$fBinaryInt
+                               GHC.Arr.$fIxInt
+                               Data.HMM.$fBinaryHMMArray_$s$fBinaryArray
+                               @ r
+                               i'4
+                               (\ i'5 :: Data.ByteString.Internal.ByteString
+                                  a17 :: GHC.Arr.Array
+                                           GHC.Types.Int
+                                           (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)[OneShot] ->
+                                w2
+                                  i'5
+                                  (Data.HMM.HMMArray
+                                     @ stateType
+                                     @ eventType
+                                     a15
+                                     a13
+                                     a14
+                                     a16
+                                     a17))))) })) -}
+4974d4e474c6aab2037296e5753a7f18
+  $wa1 ::
+    GHC.Prim.Addr#
+    -> GHC.ForeignPtr.ForeignPtrContents
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Binary.Get.Internal.Success
+         Data.Number.LogFloat.LogFloat r1
+    -> Data.Binary.Get.Internal.Decoder r1
+  {- Arity: 5, Strictness: <L,U><L,U><L,U><L,U><L,C(C1(U))>,
+     Inline: [0],
+     Unfolding: (\ @ r1
+                   ww :: GHC.Prim.Addr#
+                   ww2 :: GHC.ForeignPtr.ForeignPtrContents
+                   ww3 :: GHC.Prim.Int#
+                   ww4 :: GHC.Prim.Int#
+                   w :: Data.Binary.Get.Internal.Success
+                          Data.Number.LogFloat.LogFloat r1 ->
+                 Data.Binary.Class.$wa7
+                   @ r1
+                   ww
+                   ww2
+                   ww3
+                   ww4
+                   (\ i' :: Data.ByteString.Internal.ByteString
+                      a14 :: GHC.Types.Double[OneShot] ->
+                    w i'
+                      (Data.Number.LogFloat.logToLogFloat1 a14)
+                        `cast`
+                      (Sym (Data.Number.LogFloat.NTCo:LogFloat[0])))) -}
+fb8512909588fb74f678464d3b7006d1
+  $wbackward ::
+    (GHC.Classes.Eq stateType, GHC.Show.Show eventType,
+     GHC.Show.Show stateType) =>
+    [stateType]
+    -> [eventType]
+    -> (stateType -> Data.HMM.Prob)
+    -> (stateType -> stateType -> Data.HMM.Prob)
+    -> (stateType -> eventType -> Data.HMM.Prob)
+    -> [eventType]
+    -> GHC.Prim.Double#
+  {- Arity: 9,
+     Strictness: <L,U(C(C(U)),A)><L,U(C(C1(U)),A,C(C1(U)))><L,U(C(C1(U)),C(U),C(C1(U)))><S,U><L,U><L,U><L,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ stateType
+                   @ eventType
+                   w :: GHC.Classes.Eq stateType
+                   w1 :: GHC.Show.Show eventType
+                   w2 :: GHC.Show.Show stateType
+                   ww :: [stateType]
+                   ww2 :: [eventType]
+                   ww3 :: stateType -> Data.HMM.Prob
+                   ww4 :: stateType -> stateType -> Data.HMM.Prob
+                   ww5 :: stateType -> eventType -> Data.HMM.Prob
+                   w3 :: [eventType] ->
+                 Data.HMM.$wbackwardArray
+                   @ stateType
+                   @ eventType
+                   w
+                   w1
+                   w2
+                   ww
+                   ww2
+                   ww3
+                   ww4
+                   ww5
+                   (GHC.ST.runSTRep
+                      @ (GHC.Arr.Array GHC.Types.Int eventType)
+                      (\ @ s s1# :: GHC.Prim.State# s[OneShot] ->
+                       case GHC.List.$wlenAcc @ eventType w3 0 of ww6 { DEFAULT ->
+                       let {
+                         $j :: GHC.Prim.Int#
+                               -> (# GHC.Prim.State# s, GHC.Arr.Array GHC.Types.Int eventType #)
+                           {- Arity: 1, Strictness: <S,U> -}
+                         = \ x :: GHC.Prim.Int#[OneShot] ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.<# x 0) of wild2 {
+                             GHC.Types.False
+                             -> case GHC.Prim.newArray#
+                                       @ eventType
+                                       @ s
+                                       x
+                                       (GHC.Arr.arrEleBottom @ eventType)
+                                       s1# of ds1 { (#,#) ipv ipv1 ->
+                                case x of wild3 {
+                                  DEFAULT
+                                  -> letrec {
+                                       go2 :: [eventType]
+                                              -> GHC.Prim.Int#
+                                              -> GHC.Prim.State# s
+                                              -> GHC.Prim.State# s
+                                         {- Arity: 3, Strictness: <S,1*U><L,U><L,U> -}
+                                       = \ ds :: [eventType]
+                                           eta :: GHC.Prim.Int#
+                                           eta1 :: GHC.Prim.State# s[OneShot] ->
+                                         case ds of wild {
+                                           [] -> eta1
+                                           : y ys
+                                           -> case GHC.Prim.writeArray#
+                                                     @ s
+                                                     @ eventType
+                                                     ipv1
+                                                     eta
+                                                     y
+                                                     eta1 of s4# { DEFAULT ->
+                                              case GHC.Prim.tagToEnum#
+                                                     @ GHC.Types.Bool
+                                                     (GHC.Prim.==#
+                                                        eta
+                                                        (GHC.Prim.-# wild3 1)) of wild4 {
+                                                GHC.Types.False -> go2 ys (GHC.Prim.+# eta 1) s4#
+                                                GHC.Types.True -> s4# } } }
+                                     } in
+                                     case go2 w3 0 ipv of wild4 { DEFAULT ->
+                                     case GHC.Prim.unsafeFreezeArray#
+                                            @ s
+                                            @ eventType
+                                            ipv1
+                                            wild4 of ds2 { (#,#) ipv2 ipv3 ->
+                                     (# ipv2,
+                                        GHC.Arr.Array
+                                          @ GHC.Types.Int
+                                          @ eventType
+                                          Data.HMM.backward1
+                                          (GHC.Types.I# ww6)
+                                          wild3
+                                          ipv3 #) } }
+                                  0
+                                  -> case GHC.Prim.unsafeFreezeArray#
+                                            @ s
+                                            @ eventType
+                                            ipv1
+                                            ipv of ds2 { (#,#) ipv2 ipv3 ->
+                                     (# ipv2,
+                                        GHC.Arr.Array
+                                          @ GHC.Types.Int
+                                          @ eventType
+                                          Data.HMM.backward1
+                                          (GHC.Types.I# ww6)
+                                          0
+                                          ipv3 #) } } }
+                             GHC.Types.True
+                             -> case GHC.Arr.negRange
+                                ret_ty (# GHC.Prim.State# s,
+                                          GHC.Arr.Array GHC.Types.Int eventType #)
+                                of {} }
+                       } in
+                       case GHC.Prim.tagToEnum#
+                              @ GHC.Types.Bool
+                              (GHC.Prim.<=# 1 ww6) of wild3 {
+                         GHC.Types.False -> $j 0
+                         GHC.Types.True -> $j (GHC.Prim.+# (GHC.Prim.-# ww6 1) 1) } }))) -}
+ce2dcb2c017d2a60e5d713e011d4b7ba
+  $wbackwardArray ::
+    (GHC.Classes.Eq stateType, GHC.Show.Show eventType,
+     GHC.Show.Show stateType) =>
+    [stateType]
+    -> [eventType]
+    -> (stateType -> Data.HMM.Prob)
+    -> (stateType -> stateType -> Data.HMM.Prob)
+    -> (stateType -> eventType -> Data.HMM.Prob)
+    -> GHC.Arr.Array GHC.Types.Int eventType
+    -> GHC.Prim.Double#
+  {- Arity: 9,
+     Strictness: <L,U(C(C(U)),A)><L,U(C(C1(U)),A,C(C1(U)))><L,U(C(C1(U)),C(U),C(C1(U)))><S,U><L,U><L,U><L,U><L,U><L,U(U(U),U(U),A,U)>,
+     Inline: [0] -}
+330e224037e325a2156b15b019062261
+  $wbaumWelch ::
+    (GHC.Classes.Eq eventType, GHC.Classes.Eq stateType,
+     GHC.Show.Show eventType, GHC.Show.Show stateType) =>
+    Data.HMM.HMM stateType eventType
+    -> GHC.Arr.Array GHC.Types.Int eventType
+    -> GHC.Prim.Int#
+    -> Data.HMM.HMM stateType eventType
+  {- Arity: 7,
+     Strictness: <L,U(C(C(U)),A)><L,U(C(C(U)),A)><L,U(C(C1(U)),C(U),C(C1(U)))><L,U(C(C1(U)),C(U),C(C1(U)))><L,U(U,U,U,U,U)><L,U(U(U),U(U),A,U)><S,1*U>,
+     Inline: [0] -}
+86a8ca95bc35e5b75a1a4b1dc6ee22f0
+  $wforward ::
+    (GHC.Classes.Eq stateType, GHC.Show.Show eventType,
+     GHC.Show.Show stateType) =>
+    [stateType]
+    -> [eventType]
+    -> (stateType -> Data.HMM.Prob)
+    -> (stateType -> stateType -> Data.HMM.Prob)
+    -> (stateType -> eventType -> Data.HMM.Prob)
+    -> [eventType]
+    -> GHC.Prim.Double#
+  {- Arity: 9,
+     Strictness: <L,U(C(C(U)),A)><L,U(C(C1(U)),A,C(C1(U)))><L,U(C(C1(U)),C(U),C(C1(U)))><S,U><L,U><L,U><L,U><L,U><L,U>,
+     Inline: [0] -}
+384cf74af6d51d2965b630499b854e72
+  $whmm2Array ::
+    Data.HMM.HMM stateType eventType
+    -> (# [stateType],
+          [eventType],
+          GHC.Arr.Array GHC.Types.Int Data.HMM.Prob,
+          GHC.Arr.Array
+            GHC.Types.Int (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob),
+          GHC.Arr.Array
+            GHC.Types.Int (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob) #)
+  {- Arity: 1, Strictness: <L,U(U,U,C(U),C(C1(U)),C(C1(U)))>,
+     Inline: [0] -}
+07ee4642b1ecce8f83b7645762a2b0a7
+  $whmmJoin ::
+    (GHC.Classes.Eq stateType, GHC.Classes.Eq eventType) =>
+    Data.HMM.HMM stateType eventType
+    -> Data.HMM.HMM stateType eventType
+    -> Data.HMM.Prob
+    -> Data.HMM.HMM (GHC.Types.Int, stateType) eventType
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A)><L,U(C(C1(U)),A)>,
+     Inline: [0] -}
+60d25356b0e04a2c78f6651501a0089c
+  $wpoly_go10 ::
+    GHC.Prim.Int#
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a
+    -> [(GHC.Integer.Type.Integer, a)]
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U>, Inline: [0] -}
+b49c87cfffed328e0ec5ef1f32f408af
+  $wsimpleHMM ::
+    (GHC.Classes.Eq stateType, GHC.Show.Show stateType) =>
+    [stateType]
+    -> [eventType]
+    -> (# [stateType],
+          [eventType],
+          stateType -> Data.HMM.Prob,
+          stateType -> stateType -> Data.HMM.Prob,
+          stateType -> eventType -> Data.HMM.Prob #)
+  {- Arity: 4, Strictness: <L,U(C(C(U)),A)><L,U(A,C(U),U)><L,U><L,U>,
+     Inline: [0] -}
+7da8e132d368069076a53215b43fdcaa
+  $wsimpleMM ::
+    (GHC.Classes.Eq a, GHC.Show.Show a, GHC.Real.Integral i) =>
+    [a]
+    -> i
+    -> (# [[a]],
+          [a],
+          [a] -> Data.HMM.Prob,
+          [a] -> [a] -> Data.HMM.Prob,
+          [a] -> a -> Data.HMM.Prob #)
+  {- Arity: 5,
+     Strictness: <L,U(C(C1(U)),A)><L,U(A,A,U)><L,1*U(A,A,A,A,A,A,A,A,1*C1(U))><L,U><L,U>,
+     Inline: [0] -}
+f5981e66cf363ee7fb3f80c8f25d1085
+  $wunsafeDrop :: GHC.Prim.Int# -> [a1] -> [a1]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U><S,1*U>,
+     Inline: [0] -}
+2c5d112ec522a5b18f01f36108a8055e
+  $wviterbi ::
+    (GHC.Classes.Ord stateType, GHC.Show.Show stateType) =>
+    Data.HMM.HMM stateType eventType
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Array# eventType
+    -> [stateType]
+  {- Arity: 6,
+     Strictness: <L,U(A,C(C1(U)),A,A,A,C(C1(U)),A,A)><L,U(A,C(U),A)><L,U(U,A,C(U(U)),C(C1(U(U))),C(C1(U(U))))><L,U><L,U><L,U>,
+     Inline: [0] -}
+6a716290f83a41def82fc38f1e7bb36a
+  data HMM stateType eventType
+    = HMM {states :: [stateType],
+           events :: [eventType],
+           initProbs :: stateType -> Data.HMM.Prob,
+           transMatrix :: stateType -> stateType -> Data.HMM.Prob,
+           outMatrix :: stateType -> eventType -> Data.HMM.Prob}
+7db504c2eee36c71abbbf691d3667130
+  data HMMArray stateType eventType
+    = HMMArray {statesA :: [stateType],
+                eventsA :: [eventType],
+                initProbsA :: GHC.Arr.Array GHC.Types.Int Data.HMM.Prob,
+                transMatrixA :: GHC.Arr.Array
+                                  GHC.Types.Int (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob),
+                outMatrixA :: GHC.Arr.Array
+                                GHC.Types.Int (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)}
+433c24300ff229b6498128c8f825ab7a
+  type Prob = Data.Number.LogFloat.LogFloat
+47bd4c88a5010582e35cbaff725ca263
+  backward ::
+    (GHC.Classes.Eq eventType, GHC.Classes.Eq stateType,
+     GHC.Show.Show eventType, GHC.Show.Show stateType) =>
+    Data.HMM.HMM stateType eventType -> [eventType] -> Data.HMM.Prob
+  {- Arity: 6,
+     Strictness: <L,A><L,U(C(C(U)),A)><L,U(C(C1(U)),A,C(C1(U)))><L,U(C(C1(U)),C(U),C(C1(U)))><S(SLLLL),1*U(U,U,U,U,U)><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (6, True, False)
+                (\ @ stateType
+                   @ eventType
+                   w :: GHC.Classes.Eq eventType
+                   w1 :: GHC.Classes.Eq stateType
+                   w2 :: GHC.Show.Show eventType
+                   w3 :: GHC.Show.Show stateType
+                   w4 :: Data.HMM.HMM stateType eventType
+                   w5 :: [eventType] ->
+                 case w4 of ww { Data.HMM.HMM ww2 ww3 ww4 ww5 ww6 ->
+                 case Data.HMM.$wbackward
+                        @ stateType
+                        @ eventType
+                        w1
+                        w2
+                        w3
+                        ww2
+                        ww3
+                        ww4
+                        ww5
+                        ww6
+                        w5 of ww7 { DEFAULT ->
+                 (GHC.Types.D# ww7)
+                   `cast`
+                 (Sym (Data.Number.LogFloat.NTCo:LogFloat[0])) } }) -}
+df8f7c29b4b8aee69e12da17191db635
+  backward1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1) -}
+0cee4d25d218a1fe8c02fd5bf1a65c7b
+  baumWelch ::
+    (GHC.Classes.Eq eventType, GHC.Classes.Eq stateType,
+     GHC.Show.Show eventType, GHC.Show.Show stateType) =>
+    Data.HMM.HMM stateType eventType
+    -> GHC.Arr.Array GHC.Types.Int eventType
+    -> GHC.Types.Int
+    -> Data.HMM.HMM stateType eventType
+  {- Arity: 7,
+     Strictness: <L,U(C(C(U)),A)><L,U(C(C(U)),A)><L,U(C(C1(U)),C(U),C(C1(U)))><L,U(C(C1(U)),C(U),C(C1(U)))><L,U(U,U,U,U,U)><L,U(U(U),U(U),A,U)><S(S),1*U(1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (7, True, False)
+                (\ @ stateType
+                   @ eventType
+                   w :: GHC.Classes.Eq eventType
+                   w1 :: GHC.Classes.Eq stateType
+                   w2 :: GHC.Show.Show eventType
+                   w3 :: GHC.Show.Show stateType
+                   w4 :: Data.HMM.HMM stateType eventType
+                   w5 :: GHC.Arr.Array GHC.Types.Int eventType
+                   w6 :: GHC.Types.Int ->
+                 case w6 of ww { GHC.Types.I# ww2 ->
+                 Data.HMM.$wbaumWelch
+                   @ stateType
+                   @ eventType
+                   w
+                   w1
+                   w2
+                   w3
+                   w4
+                   w5
+                   ww2 }) -}
+49913db2de583b49e6648164cde0afbd
+  events :: Data.HMM.HMM stateType eventType -> [eventType]
+  RecSel Data.HMM.HMM
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSLLL),1*U(A,1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ stateType
+                   @ eventType
+                   ds :: Data.HMM.HMM stateType eventType ->
+                 case ds of wild { Data.HMM.HMM ds1 ds2 ds3 ds4 ds5 -> ds2 }) -}
+a4c1a38ca6df15a3651e7cac097cb64c
+  eventsA :: Data.HMM.HMMArray stateType eventType -> [eventType]
+  RecSel Data.HMM.HMMArray
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSLLL),1*U(A,1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ stateType
+                   @ eventType
+                   ds :: Data.HMM.HMMArray stateType eventType ->
+                 case ds of wild { Data.HMM.HMMArray ds1 ds2 ds3 ds4 ds5 ->
+                 ds2 }) -}
+0b5758c792870858b2f92e4cba10fb0e
+  forward ::
+    (GHC.Classes.Eq eventType, GHC.Classes.Eq stateType,
+     GHC.Show.Show eventType, GHC.Show.Show stateType) =>
+    Data.HMM.HMM stateType eventType -> [eventType] -> Data.HMM.Prob
+  {- Arity: 6,
+     Strictness: <L,A><L,U(C(C(U)),A)><L,U(C(C1(U)),A,C(C1(U)))><L,U(C(C1(U)),C(U),C(C1(U)))><S(SLLLL),1*U(U,U,U,U,U)><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (6, True, False)
+                (\ @ stateType
+                   @ eventType
+                   w :: GHC.Classes.Eq eventType
+                   w1 :: GHC.Classes.Eq stateType
+                   w2 :: GHC.Show.Show eventType
+                   w3 :: GHC.Show.Show stateType
+                   w4 :: Data.HMM.HMM stateType eventType
+                   w5 :: [eventType] ->
+                 case w4 of ww { Data.HMM.HMM ww2 ww3 ww4 ww5 ww6 ->
+                 case Data.HMM.$wforward
+                        @ stateType
+                        @ eventType
+                        w1
+                        w2
+                        w3
+                        ww2
+                        ww3
+                        ww4
+                        ww5
+                        ww6
+                        w5 of ww7 { DEFAULT ->
+                 (GHC.Types.D# ww7)
+                   `cast`
+                 (Sym (Data.Number.LogFloat.NTCo:LogFloat[0])) } }) -}
+0e4cc3a4342c63c574b238cc6c5a813d
+  hmmJoin ::
+    (GHC.Classes.Eq stateType, GHC.Classes.Eq eventType,
+     GHC.Read.Read stateType, GHC.Show.Show stateType) =>
+    Data.HMM.HMM stateType eventType
+    -> Data.HMM.HMM stateType eventType
+    -> Data.HMM.Prob
+    -> Data.HMM.HMM (GHC.Types.Int, stateType) eventType
+  {- Arity: 4,
+     Strictness: <L,U(C(C1(U)),A)><L,U(C(C1(U)),A)><L,A><L,A>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, True)
+                (\ @ stateType
+                   @ eventType
+                   w :: GHC.Classes.Eq stateType
+                   w1 :: GHC.Classes.Eq eventType
+                   w2 :: GHC.Read.Read stateType
+                   w3 :: GHC.Show.Show stateType ->
+                 Data.HMM.$whmmJoin @ stateType @ eventType w w1) -}
+290ea5eb8eafa855c7ecf04daaeae1dd
+  initProbs ::
+    Data.HMM.HMM stateType eventType -> stateType -> Data.HMM.Prob
+  RecSel Data.HMM.HMM
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLSLL),1*U(A,A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ stateType
+                   @ eventType
+                   ds :: Data.HMM.HMM stateType eventType ->
+                 case ds of wild { Data.HMM.HMM ds1 ds2 ds3 ds4 ds5 -> ds3 }) -}
+b1ebc329d68fefe3184ea5c05be6219d
+  initProbsA ::
+    Data.HMM.HMMArray stateType eventType
+    -> GHC.Arr.Array GHC.Types.Int Data.HMM.Prob
+  RecSel Data.HMM.HMMArray
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLL),1*U(A,A,1*U(U,U,U,U),A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ stateType
+                   @ eventType
+                   ds :: Data.HMM.HMMArray stateType eventType ->
+                 case ds of wild { Data.HMM.HMMArray ds1 ds2 ds3 ds4 ds5 ->
+                 ds3 }) -}
+911754cbeafc4aaa1b7139a1e2ad9a82
+  loadHMM ::
+    (GHC.Classes.Eq eventType, GHC.Classes.Eq stateType,
+     GHC.Show.Show stateType, GHC.Show.Show eventType,
+     GHC.Read.Read stateType, GHC.Read.Read eventType) =>
+    GHC.IO.FilePath -> GHC.Types.IO (Data.HMM.HMM stateType eventType)
+  {- Arity: 6,
+     Strictness: <L,U(C(C(U)),A)><L,U(C(C(U)),A)><L,U(A,C(U),C(U))><L,U(A,C(U),C(U))><L,U(A,A,A,U)><L,U(A,A,A,U)> -}
+c730c19d86e6cda82472129393bb976c
+  loadHMM' ::
+    (Data.Binary.Class.Binary stateType,
+     Data.Binary.Class.Binary eventType, GHC.Classes.Ord stateType,
+     GHC.Classes.Ord eventType, GHC.Show.Show stateType,
+     GHC.Show.Show eventType) =>
+    GHC.IO.FilePath -> GHC.Types.IO (Data.HMM.HMM stateType eventType)
+  {- Arity: 6,
+     Strictness: <L,U(U,C(C1(U)))><L,U(U,C(C1(U)))><L,U(A,C(C1(U)),A,A,A,C(C1(U)),A,A)><L,U(A,C(C1(U)),A,A,A,C(C1(U)),A,A)><L,U(A,C(U),A)><L,U(A,C(U),A)> -}
+341042d384a90c7012656b0235d10791
+  outMatrix ::
+    Data.HMM.HMM stateType eventType
+    -> stateType -> eventType -> Data.HMM.Prob
+  RecSel Data.HMM.HMM
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLLLS),1*U(A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ stateType
+                   @ eventType
+                   ds :: Data.HMM.HMM stateType eventType ->
+                 case ds of wild { Data.HMM.HMM ds1 ds2 ds3 ds4 ds5 -> ds5 }) -}
+a9ec72604729480018e909e47c41c16d
+  outMatrixA ::
+    Data.HMM.HMMArray stateType eventType
+    -> GHC.Arr.Array
+         GHC.Types.Int (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)
+  RecSel Data.HMM.HMMArray
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLS),1*U(A,A,A,A,1*U(U,U,U,U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ stateType
+                   @ eventType
+                   ds :: Data.HMM.HMMArray stateType eventType ->
+                 case ds of wild { Data.HMM.HMMArray ds1 ds2 ds3 ds4 ds5 ->
+                 ds5 }) -}
+f27f966072147df8caab46c77c9f4b2a
+  saveHMM ::
+    (GHC.Show.Show stateType, GHC.Show.Show eventType) =>
+    GHC.IO.FilePath
+    -> Data.HMM.HMM stateType eventType -> GHC.Types.IO ()
+  {- Arity: 5,
+     Strictness: <L,1*U(A,A,1*C1(U))><L,1*U(A,A,1*C1(U))><L,U><L,U(U,U,C(U),C(C1(U)),C(C1(U)))><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.HMM.saveHMM1
+                  `cast`
+                (forall stateType eventType.
+                 <GHC.Show.Show stateType>_R
+                 ->_R <GHC.Show.Show eventType>_R
+                 ->_R <GHC.IO.FilePath>_R
+                 ->_R <Data.HMM.HMM stateType eventType>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+c6b6574d9fe9def96e30fd46bf3a3bc1
+  saveHMM' ::
+    (Data.Binary.Class.Binary stateType,
+     Data.Binary.Class.Binary eventType) =>
+    GHC.IO.FilePath
+    -> Data.HMM.HMM stateType eventType -> GHC.Types.IO ()
+  {- Arity: 5,
+     Strictness: <L,1*U(1*U,A)><L,1*U(1*U,A)><L,U><L,U(U,U,C(U),C(C1(U)),C(C1(U)))><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.HMM.saveHMM'1
+                  `cast`
+                (forall stateType eventType.
+                 <Data.Binary.Class.Binary stateType>_R
+                 ->_R <Data.Binary.Class.Binary eventType>_R
+                 ->_R <GHC.IO.FilePath>_R
+                 ->_R <Data.HMM.HMM stateType eventType>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+8ca001e1e03164daf8ad9125651d185a
+  saveHMM'1 ::
+    (Data.Binary.Class.Binary stateType,
+     Data.Binary.Class.Binary eventType) =>
+    GHC.IO.FilePath
+    -> Data.HMM.HMM stateType eventType
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 5,
+     Strictness: <L,1*U(1*U,A)><L,1*U(1*U,A)><L,U><L,U(U,U,C(U),C(C1(U)),C(C1(U)))><L,U>,
+     Unfolding: (\ @ stateType
+                   @ eventType
+                   $dBinary :: Data.Binary.Class.Binary stateType
+                   $dBinary1 :: Data.Binary.Class.Binary eventType
+                   file :: GHC.IO.FilePath
+                   eta :: Data.HMM.HMM stateType eventType
+                   eta1 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 Control.Exception.Base.bracket1
+                   @ GHC.IO.Handle.Types.Handle
+                   @ ()
+                   @ ()
+                   (GHC.IO.Handle.FD.openBinaryFile1 file GHC.IO.IOMode.WriteMode)
+                     `cast`
+                   (Sym (GHC.Types.NTCo:IO[0] <GHC.IO.Handle.Types.Handle>_R))
+                   GHC.IO.Handle.hClose1
+                     `cast`
+                   (<GHC.IO.Handle.Types.Handle>_R
+                    ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                   (\ hdl :: GHC.IO.Handle.Types.Handle[OneShot]
+                      eta2 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                    Data.ByteString.Lazy.appendFile2
+                      hdl
+                      (GHC.IO.unsafeDupablePerformIO
+                         @ Data.ByteString.Lazy.Internal.ByteString
+                         (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                          case GHC.Prim.noDuplicate# s of s' { DEFAULT ->
+                          case GHC.Prim.newPinnedByteArray#
+                                 @ GHC.Prim.RealWorld
+                                 32752
+                                 s' of ds { (#,#) ipv ipv1 ->
+                          case Data.HMM.$w$cput
+                                 @ stateType
+                                 @ eventType
+                                 $dBinary
+                                 $dBinary1
+                                 (case Data.HMM.$whmm2Array
+                                         @ stateType
+                                         @ eventType
+                                         eta of ww { (#,,,,#) ww2 ww3 ww4 ww5 ww6 ->
+                                  Data.HMM.HMMArray
+                                    @ stateType
+                                    @ eventType
+                                    ww2
+                                    ww3
+                                    ww4
+                                    ww5
+                                    ww6 }) of ww { (#,#) ww2 ww3 ->
+                          (ww3 `cast` (Data.Binary.Builder.Base.NTCo:Builder[0])
+                             Data.HMM.saveHMM'2
+                               `cast`
+                             (<Data.Binary.Builder.Base.Buffer>_R
+                              ->_R Sym (GHC.Types.NTCo:IO[0]
+                                            <Data.ByteString.Lazy.Internal.ByteString>_R))
+                             (Data.Binary.Builder.Base.Buffer
+                                (GHC.Prim.byteArrayContents#
+                                   ipv1
+                                     `cast`
+                                   (UnivCo mkUnsafeCo representational (GHC.Prim.MutableByteArray#
+                                                                          GHC.Prim.RealWorld) GHC.Prim.ByteArray#))
+                                (GHC.ForeignPtr.PlainPtr ipv1)
+                                0
+                                0
+                                32752))
+                            `cast`
+                          (GHC.Types.NTCo:IO[0] <Data.ByteString.Lazy.Internal.ByteString>_R)
+                            ipv } } })
+                           `cast`
+                         (Sym (GHC.Types.NTCo:IO[0]
+                                   <Data.ByteString.Lazy.Internal.ByteString>_R)))
+                      eta2)
+                     `cast`
+                   (<GHC.IO.Handle.Types.Handle>_R
+                    ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                   eta1) -}
+dc0fb9357dadf972db2bc16dbef97dd0
+  saveHMM'2 ::
+    Data.Binary.Builder.Base.Buffer
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.ByteString.Lazy.Internal.ByteString #)
+  {- Arity: 2, HasNoCafRefs,
+     Unfolding: (\ w1 :: Data.Binary.Builder.Base.Buffer
+                   w2 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case w1 of ww { Data.Binary.Builder.Base.Buffer ww2 ww3 ww4 ww5 ww6 ->
+                 case ww5 of wild {
+                   DEFAULT
+                   -> (# w2,
+                         Data.ByteString.Lazy.Internal.Chunk
+                           ww2
+                           ww3
+                           ww4
+                           wild
+                           Data.ByteString.Lazy.Internal.Empty #)
+                   0 -> (# w2, Data.ByteString.Lazy.Internal.Empty #) } }) -}
+b8bd5b32f8f3a6de5fce8d9d2bce9b94
+  saveHMM1 ::
+    (GHC.Show.Show stateType, GHC.Show.Show eventType) =>
+    GHC.IO.FilePath
+    -> Data.HMM.HMM stateType eventType
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 5,
+     Strictness: <L,1*U(A,A,1*C1(U))><L,1*U(A,A,1*C1(U))><L,U><L,U(U,U,C(U),C(C1(U)),C(C1(U)))><L,U>,
+     Unfolding: (\ @ stateType
+                   @ eventType
+                   $dShow :: GHC.Show.Show stateType
+                   $dShow1 :: GHC.Show.Show eventType
+                   file :: GHC.IO.FilePath
+                   x :: Data.HMM.HMM stateType eventType
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 Control.Exception.Base.bracket1
+                   @ GHC.IO.Handle.Types.Handle
+                   @ ()
+                   @ ()
+                   (GHC.IO.Handle.FD.openFile1 file GHC.IO.IOMode.WriteMode)
+                     `cast`
+                   (Sym (GHC.Types.NTCo:IO[0] <GHC.IO.Handle.Types.Handle>_R))
+                   GHC.IO.Handle.hClose1
+                     `cast`
+                   (<GHC.IO.Handle.Types.Handle>_R
+                    ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                   (\ hdl :: GHC.IO.Handle.Types.Handle[OneShot]
+                      eta1 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                    GHC.IO.Handle.Text.hPutStr2
+                      hdl
+                      (case Data.HMM.$whmm2Array
+                              @ stateType
+                              @ eventType
+                              x of ww { (#,,,,#) ww2 ww3 ww4 ww5 ww6 ->
+                       Data.HMM.$w$cshowsPrec
+                         @ stateType
+                         @ eventType
+                         $dShow
+                         $dShow1
+                         0
+                         ww2
+                         ww3
+                         ww4
+                         ww5
+                         ww6
+                         (GHC.Types.[] @ GHC.Types.Char) })
+                      GHC.Types.False
+                      eta1)
+                     `cast`
+                   (<GHC.IO.Handle.Types.Handle>_R
+                    ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                   eta) -}
+274bebe91a988673e7111fad5e38cd75
+  simpleHMM ::
+    (GHC.Classes.Eq stateType, GHC.Show.Show eventType,
+     GHC.Show.Show stateType) =>
+    [stateType] -> [eventType] -> Data.HMM.HMM stateType eventType
+  {- Arity: 5,
+     Strictness: <L,U(C(C(U)),A)><L,A><L,U(A,C(U),U)><L,U><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ stateType
+                   @ eventType
+                   w :: GHC.Classes.Eq stateType
+                   w1 :: GHC.Show.Show eventType
+                   w2 :: GHC.Show.Show stateType
+                   w3 :: [stateType]
+                   w4 :: [eventType] ->
+                 case Data.HMM.$wsimpleHMM
+                        @ stateType
+                        @ eventType
+                        w
+                        w2
+                        w3
+                        w4 of ww { (#,,,,#) ww2 ww3 ww4 ww5 ww6 ->
+                 Data.HMM.HMM @ stateType @ eventType ww2 ww3 ww4 ww5 ww6 }) -}
+8ea4c832460336ebae8b73ede8039c1a
+  simpleMM ::
+    (GHC.Classes.Eq a, GHC.Show.Show a, GHC.Real.Integral i) =>
+    [a] -> i -> Data.HMM.HMM [a] a
+  {- Arity: 5,
+     Strictness: <L,U(C(C1(U)),A)><L,U(A,A,U)><L,1*U(A,A,A,A,A,A,A,A,1*C1(U))><L,U><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ a13
+                   @ i
+                   w :: GHC.Classes.Eq a13
+                   w1 :: GHC.Show.Show a13
+                   w2 :: GHC.Real.Integral i
+                   w3 :: [a13]
+                   w4 :: i ->
+                 case Data.HMM.$wsimpleMM
+                        @ a13
+                        @ i
+                        w
+                        w1
+                        w2
+                        w3
+                        w4 of ww { (#,,,,#) ww2 ww3 ww4 ww5 ww6 ->
+                 Data.HMM.HMM @ [a13] @ a13 ww2 ww3 ww4 ww5 ww6 }) -}
+48899d0ac4c77314ad0bee0aaafabd3d
+  states :: Data.HMM.HMM stateType eventType -> [stateType]
+  RecSel Data.HMM.HMM
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLLLL),1*U(1*U,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ stateType
+                   @ eventType
+                   ds :: Data.HMM.HMM stateType eventType ->
+                 case ds of wild { Data.HMM.HMM ds1 ds2 ds3 ds4 ds5 -> ds1 }) -}
+983d10c2e6ccde21450db580c146e802
+  statesA :: Data.HMM.HMMArray stateType eventType -> [stateType]
+  RecSel Data.HMM.HMMArray
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLLLL),1*U(1*U,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ stateType
+                   @ eventType
+                   ds :: Data.HMM.HMMArray stateType eventType ->
+                 case ds of wild { Data.HMM.HMMArray ds1 ds2 ds3 ds4 ds5 ->
+                 ds1 }) -}
+e3a64cb4090b7d1d095ad3c5998e720e
+  transMatrix ::
+    Data.HMM.HMM stateType eventType
+    -> stateType -> stateType -> Data.HMM.Prob
+  RecSel Data.HMM.HMM
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLLSL),1*U(A,A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ stateType
+                   @ eventType
+                   ds :: Data.HMM.HMM stateType eventType ->
+                 case ds of wild { Data.HMM.HMM ds1 ds2 ds3 ds4 ds5 -> ds4 }) -}
+16834c681cdf06396a647f697c117c9b
+  transMatrixA ::
+    Data.HMM.HMMArray stateType eventType
+    -> GHC.Arr.Array
+         GHC.Types.Int (GHC.Arr.Array GHC.Types.Int Data.HMM.Prob)
+  RecSel Data.HMM.HMMArray
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSL),1*U(A,A,A,1*U(U,U,U,U),A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ stateType
+                   @ eventType
+                   ds :: Data.HMM.HMMArray stateType eventType ->
+                 case ds of wild { Data.HMM.HMMArray ds1 ds2 ds3 ds4 ds5 ->
+                 ds4 }) -}
+212ad5525e651d3d7ab17c536fefae9e
+  viterbi ::
+    (GHC.Classes.Eq eventType, GHC.Classes.Ord stateType,
+     GHC.Show.Show eventType, GHC.Show.Show stateType) =>
+    Data.HMM.HMM stateType eventType
+    -> GHC.Arr.Array GHC.Types.Int eventType -> [stateType]
+  {- Arity: 6,
+     Strictness: <L,A><L,U(A,C(C1(U)),A,A,A,C(C1(U)),A,A)><L,A><L,U(A,C(U),A)><L,U(U,A,C(U(U)),C(C1(U(U))),C(C1(U(U))))><S(SSLL),1*U(U(U),U(U),A,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (6, True, False)
+                (\ @ stateType
+                   @ eventType
+                   w :: GHC.Classes.Eq eventType
+                   w1 :: GHC.Classes.Ord stateType
+                   w2 :: GHC.Show.Show eventType
+                   w3 :: GHC.Show.Show stateType
+                   w4 :: Data.HMM.HMM stateType eventType
+                   w5 :: GHC.Arr.Array GHC.Types.Int eventType ->
+                 case w5 of ww { GHC.Arr.Array ww2 ww3 ww4 ww5 ->
+                 case ww2 of ww6 { GHC.Types.I# ww7 ->
+                 case ww3 of ww8 { GHC.Types.I# ww9 ->
+                 Data.HMM.$wviterbi
+                   @ stateType
+                   @ eventType
+                   w1
+                   w3
+                   w4
+                   ww7
+                   ww9
+                   ww5 } } }) -}
+instance Data.Binary.Class.Binary [Data.HMM.HMMArray]
+  = Data.HMM.$fBinaryHMMArray
+instance Data.Binary.Class.Binary [Data.Number.LogFloat.LogFloat]
+  = Data.HMM.$fBinaryLogFloat
+instance GHC.Read.Read [Data.HMM.HMMArray]
+  = Data.HMM.$fReadHMMArray
+instance GHC.Read.Read [Data.Number.LogFloat.LogFloat]
+  = Data.HMM.$fReadLogFloat
+instance GHC.Show.Show [Data.HMM.HMM] = Data.HMM.$fShowHMM
+instance GHC.Show.Show [Data.HMM.HMMArray]
+  = Data.HMM.$fShowHMMArray
+"SPEC/Data.HMM $fBinaryArray @ Int @ LogFloat" [ALWAYS] forall $dBinary :: Data.Binary.Class.Binary
+                                                                             GHC.Types.Int
+                                                               $dIx :: GHC.Arr.Ix GHC.Types.Int
+                                                               $dBinary1 :: Data.Binary.Class.Binary
+                                                                              Data.Number.LogFloat.LogFloat
+  Data.Binary.Class.$fBinaryArray @ GHC.Types.Int
+                                  @ Data.Number.LogFloat.LogFloat
+                                  $dBinary
+                                  $dIx
+                                  $dBinary1
+  = Data.HMM.$fBinaryHMMArray_$s$fBinaryArray
+"SPEC/Data.HMM $fReadArray @ Int @ LogFloat" [ALWAYS] forall $dIx :: GHC.Arr.Ix
+                                                                       GHC.Types.Int
+                                                             $dRead :: GHC.Read.Read GHC.Types.Int
+                                                             $dRead1 :: GHC.Read.Read
+                                                                          Data.Number.LogFloat.LogFloat
+  GHC.Read.$fReadArray @ GHC.Types.Int
+                       @ Data.Number.LogFloat.LogFloat
+                       $dIx
+                       $dRead
+                       $dRead1
+  = Data.HMM.$s$fReadArray
+"SPEC/Data.HMM $fReadArray_$creadList @ Int @ LogFloat" [ALWAYS] forall $dIx :: GHC.Arr.Ix
+                                                                                  GHC.Types.Int
+                                                                        $dRead :: GHC.Read.Read
+                                                                                    GHC.Types.Int
+                                                                        $dRead1 :: GHC.Read.Read
+                                                                                     Data.Number.LogFloat.LogFloat
+  GHC.Read.$fReadArray_$creadList @ GHC.Types.Int
+                                  @ Data.Number.LogFloat.LogFloat
+                                  $dIx
+                                  $dRead
+                                  $dRead1
+  = Data.HMM.$s$fReadArray_$s$fReadArray_$creadList
+"SPEC/Data.HMM $fReadArray_$creadsPrec @ Int @ LogFloat" [ALWAYS] forall $dIx :: GHC.Arr.Ix
+                                                                                   GHC.Types.Int
+                                                                         $dRead :: GHC.Read.Read
+                                                                                     GHC.Types.Int
+                                                                         $dRead1 :: GHC.Read.Read
+                                                                                      Data.Number.LogFloat.LogFloat
+  GHC.Read.$fReadArray_$creadsPrec @ GHC.Types.Int
+                                   @ Data.Number.LogFloat.LogFloat
+                                   $dIx
+                                   $dRead
+                                   $dRead1
+  = Data.HMM.$s$fReadArray_$s$fReadArray_$creadsPrec
+"SPEC/Data.HMM $fShowArray @ Int @ LogFloat" [ALWAYS] forall $dIx :: GHC.Arr.Ix
+                                                                       GHC.Types.Int
+                                                             $dShow :: GHC.Show.Show GHC.Types.Int
+                                                             $dShow1 :: GHC.Show.Show
+                                                                          Data.Number.LogFloat.LogFloat
+  GHC.Arr.$fShowArray @ GHC.Types.Int
+                      @ Data.Number.LogFloat.LogFloat
+                      $dIx
+                      $dShow
+                      $dShow1
+  = Data.HMM.$fShowHMMArray_$s$fShowArray
+"SPEC/Data.HMM fromList @ Integer _" [ALWAYS] forall @ a13
+                                                     $dOrd :: GHC.Classes.Ord
+                                                                GHC.Integer.Type.Integer
+  Data.Map.Base.fromList @ GHC.Integer.Type.Integer @ a13 $dOrd
+  = Data.HMM.$sfromList @ a13
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
